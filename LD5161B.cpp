@@ -3,18 +3,18 @@
 #include "./LD5161B.h"
 
 /**
-   The default constructor. Allows creating an empty array with
-   LD5161B objects.
-
-   @constructor
-*/
+ * The default constructor. Allows creating an empty array with
+ * LD5161B objects.
+ * 
+ * @constructor
+ */
 LD5161B::LD5161B() {
   // This constructor is empty.
 }
 
 /**
-   @param uint8_t deviceAddress Address to the expander.
-*/
+ * @param uint8_t deviceAddress Address to the expander.
+ */
 LD5161B::LD5161B(const uint8_t deviceAddress) {
   this->expander.begin(deviceAddress);
 
@@ -25,10 +25,10 @@ LD5161B::LD5161B(const uint8_t deviceAddress) {
 }
 
 /**
-   Turns off all the LEDs.
-
-   @return void
-*/
+ * Turns off all the LEDs.
+ * 
+ * @return void
+ */
 void LD5161B::off() {
   for (int i = 0; i < 8; ++i) {
     this->expander.digitalWrite(i, HIGH);
@@ -36,11 +36,11 @@ void LD5161B::off() {
 }
 
 /**
-   Shows given number on 7. segment display.
-
-   @param unsigned short number Number to display.
-   @return void
-*/
+ * Shows given number on 7. segment display.
+ * 
+ * @param unsigned short number Number to display.
+ * @return void
+ */
 void LD5161B::show(const unsigned short number) {
   switch (number) {
     case 0:
@@ -79,10 +79,10 @@ void LD5161B::show(const unsigned short number) {
 }
 
 /**
-   Shows number "0".
-
-   @return void
-*/
+ * Shows number "0".
+ * 
+ * @return void
+ */
 void LD5161B::displayZero() {
   this->off();
 
@@ -95,10 +95,10 @@ void LD5161B::displayZero() {
 }
 
 /**
-   Shows number "1".
-
-   @return void
-*/
+ * Shows number "1".
+ * 
+ * @return void
+ */
 void LD5161B::displayOne() {
   this->off();
 
@@ -107,10 +107,10 @@ void LD5161B::displayOne() {
 }
 
 /**
-   Shows number "2".
-
-   @return void
-*/
+ * Shows number "2".
+ * 
+ * @return void
+ */
 void LD5161B::displayTwo() {
   this->off();
 
@@ -122,10 +122,10 @@ void LD5161B::displayTwo() {
 }
 
 /**
-   Shows number "3".
-
-   @return void
-*/
+ * Shows number "3".
+ * 
+ * @return void
+ */
 void LD5161B::displayThree() {
   this->off();
 
@@ -137,10 +137,10 @@ void LD5161B::displayThree() {
 }
 
 /**
-   Shows number "4".
-
-   @return void
-*/
+ * Shows number "4".
+ * 
+ * @return void
+ */
 void LD5161B::displayFour() {
   this->off();
 
@@ -151,10 +151,10 @@ void LD5161B::displayFour() {
 }
 
 /**
-   Shows number "5".
-
-   @return void
-*/
+ * Shows number "5".
+ * 
+ * @return void
+ */
 void LD5161B::displayFive() {
   this->off();
 
@@ -166,10 +166,10 @@ void LD5161B::displayFive() {
 }
 
 /**
-   Shows number "6".
-
-   @return void
-*/
+ * Shows number "6".
+ * 
+ * @return void
+ */
 void LD5161B::displaySix() {
   this->off();
 
@@ -183,10 +183,10 @@ void LD5161B::displaySix() {
 }
 
 /**
-   Shows number "7".
-
-   @return void
-*/
+ * Shows number "7".
+ * 
+ * @return void
+ */
 void LD5161B::displaySeven() {
   this->off();
 
@@ -196,10 +196,10 @@ void LD5161B::displaySeven() {
 }
 
 /**
-   Shows number "8".
-
-   @return void
-*/
+ * Shows number "8".
+ * 
+ * @return void
+ */
 void LD5161B::displayEight() {
   this->off();
 
@@ -213,10 +213,10 @@ void LD5161B::displayEight() {
 }
 
 /**
-   Shows number "9".
-
-   @return void
-*/
+ * Shows number "9".
+ * 
+ * @return void
+ */
 void LD5161B::displayNine() {
   this->off();
 
