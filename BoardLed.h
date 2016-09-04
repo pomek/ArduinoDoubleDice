@@ -1,50 +1,50 @@
 class BoardLed {
-    private:
-        unsigned short pin;
-        unsigned long time;
-        bool isActive;
+  private:
+    unsigned short pin;
+    unsigned long time;
+    bool isActive;
 
-    public:
-        /**
-         * The default constructor. Allows creating an empty array with
-         * BoardLed objects.
-         * 
-         * @constructor
-         */
-        BoardLed();
+  public:
+    /**
+       The default constructor. Allows creating an empty array with
+       BoardLed objects.
 
-        /**
-         * @param unsigned short pin Number of pin for controlling the LED.
-         * @constructor
-         */
-        BoardLed(const unsigned short pin);
+       @constructor
+    */
+    BoardLed();
 
-        /**
-         * Switch on the LED.
-         * 
-         * @return void
-         */
-        void on();
+    /**
+       @param unsigned short pin Number of pin for controlling the LED.
+       @constructor
+    */
+    BoardLed(const unsigned short pin);
 
-        /**
-         * Switch off the LED.
-         * 
-         * @return void
-         */
-        void off();
+    /**
+       Switch on the LED.
 
-        /**
-         * Switch current status of the LED.
-         *
-         * @return void
-         */
-        void toggle();
+       @return void
+    */
+    void on();
 
-        /**
-         * Allows blinking the LED using a non-blocking interface.
-         * 
-         * @param int interval The frequency of blinking in mili-seconds.
-         * @return void
-         */
-        void blink(const unsigned int interval);
+    /**
+       Switch off the LED.
+
+       @return void
+    */
+    void off();
+
+    /**
+       Switch current status of the LED.
+
+       @return void
+    */
+    void toggle();
+
+    /**
+       Allows blinking the LED using a non-blocking interface.
+
+       @param int interval The frequency of blinking in mili-seconds.
+       @return void
+    */
+    void blink(const unsigned int interval);
 };
