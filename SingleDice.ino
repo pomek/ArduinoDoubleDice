@@ -10,18 +10,15 @@
 #define BUTTON 8
 
 BoardLed *leds;
-LD5161B greenDisplay;
 LD5161B redDisplay;
 bool isActive;
 bool isDone;
 unsigned long beginTime;
 unsigned short redNumber;
-unsigned short greenNumber;
 
 void setup() {
   leds = new BoardLed[5];
-  greenDisplay = LD5161B(0x20);
-  redDisplay = LD5161B(0x21);
+  redDisplay = LD5161B(0x20);
 
   // Leds are connected with pins 9 - 13.
   for (int i = 0; i < 5; ++i) {
@@ -30,16 +27,19 @@ void setup() {
 
   pinMode(BUTTON, INPUT_PULLUP);
   randomSeed(analogRead(0));
+
+  for (int i= 0; i<10; ++i) {
+    redDisplay.show(i);
+    delay(250*i);
+  }
 }
 
 void loop() {
   // Waits for a new process.
   if (!isActive && digitalRead(BUTTON) == LOW) {
-    greenDisplay.off();
     redDisplay.off();
 
     redNumber = 0;
-    greenNumber = 0;
     isActive = true;
     isDone = false;
     beginTime = millis();
@@ -47,7 +47,6 @@ void loop() {
 
   // Numbers are generated. Just display them.
   if (isDone) {
-    greenDisplay.show(greenNumber);
     redDisplay.show(redNumber);
   }
 
@@ -71,13 +70,8 @@ void loop() {
       unsigned short secondModulo = timeDifferent % 1000;
 
       // Generate the red number.
-      if (!redNumber && timeDifferent > 500 && timeDifferent < 1000) {
+      if (!redNumber && timeDifferent > 1000 && timeDifferent < 1500) {
         redNumber = random(0, 6) + 1;
-      }
-
-      // Generate the green number.
-      if (!greenNumber && timeDifferent > 1000 && timeDifferent < 1500) {
-        greenNumber = random(0, 6) + 1;
       }
 
       if (secondModulo >= 0 && secondModulo < 100) {          // [X][ ][ ][ ][ ]

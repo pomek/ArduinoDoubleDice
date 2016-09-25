@@ -1,10 +1,7 @@
-# DoubleDice
+# SingleDice
 
-![DoubleDice](./assets/dice.jpg)
+![SingleDice](./assets/dice.png)
 
-## BreadBoard
-
-![BreadBoard](./assets/breadboard.png)
 
 ## Schematic
 
