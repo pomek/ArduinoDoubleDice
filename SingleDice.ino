@@ -2,11 +2,11 @@
 #include "./BoardLed.h"
 #include "./LD5161B.h"
 
-#define GREEN 0
-#define YELLOW_LEFT 1
+#define GREEN 4
+#define YELLOW_LEFT 3
 #define YELLOW_MIDDLE 2
-#define YELLOW_RIGHT 3
-#define RED 4
+#define YELLOW_RIGHT 1
+#define RED 0
 #define BUTTON 8
 
 BoardLed *leds;
@@ -27,11 +27,6 @@ void setup() {
 
   pinMode(BUTTON, INPUT_PULLUP);
   randomSeed(analogRead(0));
-
-  for (int i= 0; i<10; ++i) {
-    redDisplay.show(i);
-    delay(250*i);
-  }
 }
 
 void loop() {
